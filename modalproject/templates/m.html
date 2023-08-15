@@ -1,76 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django way</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .c_icon {
+            border-radius: 5px;
+            padding: 5px;
+            background: black;
+            color: red;
+            margin-right: 5px;
+        }
 
+        .bt_color {
+
+            color: red;
+            background-color: black;
+        }
+        .close{
+            color:black;
+            opacity:1;
+        }
+        .model-footer{
+            border-top:0;
+        }
+    </style>
 </head>
-<body>
-    
-  
 
-                <div class="modal fade" id="myModal">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h4 class="modal-title">Create Account</h4>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-                            
-                            <form method="post" class="p-5"  >
-                                  
-                              {% csrf_token %}
-            
-            
-                              <div class="form-group">
-                                <label for="id_username">Username:</label>
-                                <input type="text" required class="form-control" id="id_username" name="username" placeholder="Enter Username">
-                               
-                              </div>
-                             
-            
-                              <div class="form-group">
-                                <label for="id_password1">Password</label>
-                                <input type="password" required class="form-control" id="id_password1" name="password1" placeholder="Enter Password">
-                               
-                              </div>
-                               
-                    
-            
-                              <div class="form-group">
-                                <label for="id_password2">Confirm Password</label>
-                                <input type="password" required class="form-control" id="id_password2" name="password2" placeholder="Confirm Password">
-                               
-                              </div>
-                    
-                    <button type="submit" class="btn btn-danger">Create User</button>
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            </div>
+<body>
+
+
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content" style="border-radius:0;">
+                <div class="modal-header">
+                    <h4 class="modal-title">Create Account</h4>
+                    <button type="button" class="close" data-dismiss="modal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-x-square-fill" style="opacity:1;color:black;" viewBox="0 0 16 16">
+                            <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"/>
+                          </svg>
+
+                    </button>
+                </div>
+
+                <form method="post" class="px-5 pt-5 pb-3">
+
+                    {% csrf_token %}
+
+
+                    <div class="form-group">
+
+                        <div class="d-flex align-items-center">
+
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="currentColor"
+                                class="bi bi-person-circle c_icon" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                            </svg>
+                            <input type="text" required class="form-control" id="id_username" name="username"
+                                placeholder="Enter Username">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <div class="d-flex align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="currentColor"
+                                class="bi bi-lock c_icon" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
+                            </svg>
+                            <input type="password" required class="form-control" id="id_password1" name="password1"
+                                placeholder="Enter Password">
                         </div>
                     </div>
+
+
+
+                    <div class="form-group">
+
+                        <div class="d-flex align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="currentColor"
+                                class="bi bi-lock c_icon" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM5 8h6a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" />
+                            </svg>
+                            <input type="password" required class="form-control" id="id_password2" name="password2"
+                                placeholder="Confirm Password">
+
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                    <button type="submit" class="btn btn-danger bt_color">Create User</button>
                 </div>
-                
+
+                    <!--
+                    <div class="modal-footer" style="border-top:0;">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div> -->
+                </form>
+            </div>
+            
+        </div>
     </div>
-    
-    
+    </div>
+
+    </div>
+
+
     <script>
-        
-        
-        
+
+
+
     </script>
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
     <script>
         const createAccountUrl = "{% url 'create_account_js' %}";
         const page1Url = "{% url 'page1' %}";
     </script>
-    
+
 </body>
+
 </html>
