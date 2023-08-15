@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django way</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<body>
+    
+  
+
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Create Account</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            
+                            <form method="post" class="p-5"  >
+                                  
+                              {% csrf_token %}
+            
+            
+                              <div class="form-group">
+                                <label for="id_username">Username:</label>
+                                <input type="text" required class="form-control" id="id_username" name="username" placeholder="Enter Username">
+                               
+                              </div>
+                             
+            
+                              <div class="form-group">
+                                <label for="id_password1">Password</label>
+                                <input type="password" required class="form-control" id="id_password1" name="password1" placeholder="Enter Password">
+                               
+                              </div>
+                               
+                    
+            
+                              <div class="form-group">
+                                <label for="id_password2">Confirm Password</label>
+                                <input type="password" required class="form-control" id="id_password2" name="password2" placeholder="Confirm Password">
+                               
+                              </div>
+                    
+                    <button type="submit" class="btn btn-danger">Create User</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+    </div>
+    
+    
+    <script>
+        
+        
+        
+    </script>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script>
+        const createAccountUrl = "{% url 'create_account_js' %}";
+        const page1Url = "{% url 'page1' %}";
+    </script>
+    
+</body>
+</html>
