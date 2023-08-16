@@ -55,7 +55,7 @@
 
                     <div class="form-group">
 
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center main-div">
 
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="currentColor"
                                 class="bi bi-person-circle c_icon" viewBox="0 0 16 16">
@@ -67,13 +67,14 @@
                                 placeholder="Enter Username">
 
                         </div>
+                        <div class="error-container" id="username-error"></div>  <!-- div to display error in username-->
 
                     </div>
 
 
                     <div class="form-group">
 
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center main-div">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="currentColor"
                                 class="bi bi-lock c_icon" viewBox="0 0 16 16">
                                 <path
@@ -82,13 +83,14 @@
                             <input type="password" required class="form-control" id="id_password1" name="password1"
                                 placeholder="Enter Password">
                         </div>
+                        <div class="error-container" id="password1-error"></div>
                     </div>
 
 
 
                     <div class="form-group">
 
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="35" fill="currentColor"
                                 class="bi bi-lock c_icon" viewBox="0 0 16 16">
                                 <path
@@ -98,16 +100,17 @@
                                 placeholder="Confirm Password">
 
                         </div>
+                        <div class="error-container" id="password2-error"></div>
                     </div>
 
                     <div class="text-center">
                     <button type="submit" class="btn btn-danger bt_color">Create User</button>
                 </div>
 
-                    <!--
+                
                     <div class="modal-footer" style="border-top:0;">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div> -->
+                        
+                    </div> 
                 </form>
             </div>
             
@@ -129,8 +132,9 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script>
-        const createAccountUrl = "{% url 'create_account_js' %}";
-        const page1Url = "{% url 'page1' %}";
+        //passing this url in a variable is important because js showing error when using it in normal django way {% url 'create_account_js' %}
+        const createAccountUrl = "{% url 'create_account_js' %}";  //passing url where the form want to be submitted
+        const page1Url = "{% url 'page1' %}";  //success url when validation is success 
     </script>
 
 </body>
